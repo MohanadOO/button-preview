@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, ButtonProps, buttonVariants } from './components/ui/button'
+import { Button, ButtonProps, buttonVariants } from './components/ui/Button'
 import { twJoin } from 'tailwind-merge'
 
 const translate = {

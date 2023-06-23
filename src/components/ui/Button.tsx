@@ -21,9 +21,12 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   }
 
 const buttonVariants = cva(
+  // Basic Styles
   'relative inline-flex items-center justify-center cursor-pointer rounded-xl tracking-wide shadow hover:shadow-md shadow-white/20 disabled:shadow disabled:cursor-not-allowed outline-none focus-visible:ring-2 ring-offset-4 ring-offset-zinc-900 focus:scale-[0.95] transition border-2 border-white/20',
   {
+    // Type of variants
     variants: {
+      // Button colors variant
       variant: {
         primary:
           'bg-purple-600 hover:bg-purple-700 disabled:bg-purple-700/60 text-white ring-purple-600',
@@ -36,19 +39,24 @@ const buttonVariants = cva(
         ghost:
           'bg-transparent shadow-none border-none hover:bg-gray-600 ring-gray-600',
         outline: 'bg-transparent shadow-none hover:bg-gray-700 ring-gray-700',
-        link: 'bg-transparent shadow-none border-none text-purple-600',
+        link: 'bg-transparent shadow-none hover:shadow-none border-none text-purple-600',
       },
+      // Button size variants
       size: {
         sm: 'py-0.5 px-2 text-xs md:text-sm font-bold',
         default: 'py-2 px-4 text-sm md:text-base font-medium',
         lg: 'py-3.5 px-6 md:text-lg font-medium',
       },
+      // Outline variants
       outline: {
         default: '',
         outline: 'bg-transparent',
       },
     },
+    // The default variant if not specified.
     defaultVariants: { variant: 'primary', size: 'default' },
+
+    // Styles applied when two variants or more are met.
     compoundVariants: [
       {
         variant: 'primary',
@@ -76,7 +84,7 @@ const buttonVariants = cva(
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { children, variant, size, outline, className, icon, loading, ...rest },
+    { className, children, loading, icon, variant, size, outline, ...rest },
     ref
   ) => {
     return (
@@ -101,5 +109,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   }
 )
 
-Button.displayName = 'Button'
 export { Button, buttonVariants }

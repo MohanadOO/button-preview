@@ -72,7 +72,7 @@ export default function App() {
           <React.Fragment key={type}>
             <div
               key={type}
-              className='flex max-w-full overflow-x-auto items-center justify-evenly gap-x-5 gap-y-5 border-b border-b-purple-400/50 py-8'
+              className='flex max-w-full overflow-x-auto items-center md:justify-evenly gap-x-5 gap-y-5 border-b border-b-purple-400/50 py-8'
             >
               {buttonSizes.map((size) => (
                 <Button
